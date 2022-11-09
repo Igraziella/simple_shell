@@ -99,7 +99,7 @@ void _cd_help(void);
 void _change_directory(appData_t *prmData);
 void _change_to_any_directory(appData_t *prmData, char *prmCurrentDirectory);
 void _change_to_home_directory(appData_t *prmData, char *prmCurrentDirectory);
-void _change_to_previous_directory(appData_t *prmData, char *prmCurrentDirectory);
+void _change_to_previous_dir(appData_t *prmData, char *prmCurrentDirectory);
 int _checkEndCharacter(char *prmString);
 int _checkEscapeSeparators(char prmChar, char *prmEscapeSeparators);
 int _checkSeparators(char prmChar, char *prmSeparators);

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _freeAppData - free all pointer of the appllication
+ * _freeAppData - free all pointer of the application
  * @prmData: data structure
  *
  */
@@ -27,9 +27,9 @@ void _freeAppData(appData_t *prmData)
 		_freeCharDoublePointer(prmData->history);
 	prmData->history = NULL;
 	/*if (prmData->env != NULL)
-	 * _freeEnvList(prmData->env);
-	prmData->env = NULL;*/
+		_freeEnvList(prmData->env);
+		prmData->env = NULL;*/
 	/*if (prmData != NULL)
-	 * free(prmData);
-	prmData = NULL;*/
+		free(prmData);
+		prmData = NULL;*/
 }

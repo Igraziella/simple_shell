@@ -21,7 +21,7 @@ void _help(appData_t *prmData)
 	)
 		return;
 	if (_strcmp(prmData->arguments[1], "cd") == 0)
-		_cdHelp();
+		_cd_help();
 	else if (_strcmp(prmData->arguments[1], "env") == 0)
 		_envHelp();
 	else if (_strcmp(prmData->arguments[1], "setenv") == 0)

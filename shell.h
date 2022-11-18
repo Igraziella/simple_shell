@@ -125,7 +125,8 @@ environment_t *_getenv(environment_t *prmEnviron, char *prmName);
 char *_getenvname(char *prmVariable);
 char *_getenvvalue(char *prmVariable);
 int _getEnvIndex(environment_t *prmHead, char *prmName);
-environment_t *_getEnvNodeAtIndex(environment_t *prmHead, unsigned int prmIndex);
+environment_t *_getEnvNodeAtIndex(environment_t *prmHead,
+		unsigned int prmIndex);
 environment_t *_getLastEnvNode(environment_t *prmHeadNode);
 void _getline(appData_t *prmData);
 char *_getword(char *prmGlobal, int prmOffset, int prmSize);
@@ -146,7 +147,8 @@ void _printenv(environment_t *prmEnviron);
 int _putchar(char prmChar);
 int _puts(char *prmStr);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
-void _setenv(environment_t *prmEnviron, char *prmName, char *prmValue, int prmOverwrite);
+void _setenv(environment_t *prmEnviron, char *prmName, char *prmValue,
+		int prmOverwrite);
 void _setenvHelp(void);
 void _setEnvironment(appData_t *prmData);
 char *_strcat(char *prmDest, char *prmSrc);
@@ -158,7 +160,8 @@ unsigned int _strcspn(char *prmString, char *prmDeny);
 char *_strdup(char *prmString);
 int _strlen(char *prmStr);
 char *_strstr(char *prmHaystack, char *prmNeedle, int prmBegin);
-char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
+char **_strtow(char *prmString, char *prmSeparators,
+		char *prmEscapeSeparators);
 void _unsetenv(appData_t *prmData, char *prmName);
 void _unsetenvHelp(void);
 void _unsetEnvironment(appData_t *prmData);

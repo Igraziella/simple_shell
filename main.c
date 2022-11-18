@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * main - Check the code
+ * Return: Always 0
+ */
+
 int main(int argc __attribute__((unused)), char **argv)
 {
 	appData_t *appData = NULL;
@@ -7,40 +12,27 @@ int main(int argc __attribute__((unused)), char **argv)
 	void (*func)(appData_t *);
 
 	appData = _initData(argv);
-
-	do {
-		signal(SIGINT, _ctrlC);
+	do {	signal(SIGINT, _ctrlC);
 		_prompt();
-
 		_getline(appData);
-
 		appData->history = _strtow(appData->buffer, COMMAND_SEPARATOR,
 				ESCAPE_SEPARATOR);
-
 		if (appData->history == NULL)
-		{
-			_freeAppData(appData);
+		{	_freeAppData(appData);
 			free(appData);
 			continue;
-		}
-
-		for (cLoop = 0; appData->history[cLoop] != NULL; cLoop++)
+		} for (cLoop = 0; appData->history[cLoop] != NULL; cLoop++)
 		{
 			appData->arguments = _strtow(appData->history[cLoop],
 					SEPARATORS, ESCAPE_SEPARATOR);
-
 			if (appData->arguments == NULL)
-			{
-				_freeAppData(appData);
+			{	_freeAppData(appData);
 				_freeEnvList(appData->env);
 				appData->env = NULL;
 				free(appData);
 				appData = NULL;
 				break;
-			}
-
-			appData->commandName = _strdup(appData->arguments[0]);
-
+			} appData->commandName = _strdup(appData->arguments[0]);
 			if (appData->commandName != NULL)
 			{
 				func = _getCustomFunction(appData->commandName);
@@ -48,14 +40,11 @@ int main(int argc __attribute__((unused)), char **argv)
 					func(appData);
 				else
 					_execCommand(appData);
-			}
-			_freeCharDoublePointer(appData->arguments);
+			} _freeCharDoublePointer(appData->arguments);
 			appData->arguments = NULL;
 			free(appData->commandName);
 			appData->commandName = NULL;
-		}
-
-		_freeAppData(appData);
+		} _freeAppData(appData);
 	} while (1);
 	return (EXIT_SUCCESS);
 }

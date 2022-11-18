@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * _errorHandler - handles errors
+ * @prmData: Data structure
+ * @messageCode: Error message to be sent
+ */
+
 void _errorHandler(appData_t *prmData, int messageCode)
 {
 	int i = 0;
